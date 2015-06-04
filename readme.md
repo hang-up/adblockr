@@ -21,7 +21,7 @@ As of the time being (June 4th 2015), AdBlockr relies on
 
 <body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/adblockr.js"></script>
+    <script src="/js/adblockr_min.js"></script>
 </body>
 
 <script>
