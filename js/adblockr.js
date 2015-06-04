@@ -58,9 +58,3 @@ var blockrContainer = {
         blockrContainer.aggressive(blockrContainer.options.aggressive);
     }
 };
-
-
-(function($) {
-    blockrContainer.init();
-})(jQuery);
-
