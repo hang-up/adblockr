@@ -2,7 +2,7 @@ var blockrContainer = {
     options: {
         colors: ["#F19A2A", "#F2B635", "#00CAFF", "#00A0E6", "#F25648"],
         title: "You are using an adblocker!",
-        caption: "Thanks for making the countless sleepless developments nights made completely worthless.",
+        caption: "Thanks for making the countless sleepless developments nights completely worthless.",
         aggressive: false
     },
 
