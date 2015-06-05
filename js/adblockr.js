@@ -44,8 +44,6 @@ var blockrContainer = {
 
     init: function(options) {
         if (options) {
-            console.log(options);
-
             for(var key in options) {
                 if(blockrContainer.options.hasOwnProperty(key)) {
                     blockrContainer.options[key] = options[key];
