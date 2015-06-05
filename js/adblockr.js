@@ -18,7 +18,7 @@ var blockrContainer = {
         "</div>",
 
     appendText : function() {
-        if (document.getElementById("ad-blockr") != undefined) {
+        if (document.getElementById("ad-blockr") === undefined) {
             $("body").hide().append(blockrContainer.getText).fadeIn();
             $("#adblocker-title").append(blockrContainer.options.title);
             $("#adblocker-caption").text(blockrContainer.options.caption);
