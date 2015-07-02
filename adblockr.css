@@ -10,7 +10,7 @@
     font-family: "Abel", sans-serif;
 }
 
-#adblocker-title, #adblocker-caption, #adblocker-icon {
+.center, #adblocker-icon {
     text-align: center;
     color: #fff;
     position: relative;
