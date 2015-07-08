@@ -6,6 +6,7 @@ var blockrContainer = {
         aggressive: false
     },
 
+
     /**
      * Sets the background color based on the colors array passed in the options.
      *
@@ -14,6 +15,7 @@ var blockrContainer = {
         var index = Math.floor(Math.random()*blockrContainer.options.colors.length);
         document.getElementsByClassName("adblocker-overlay")[0].style.backgroundColor = blockrContainer.options.colors[index];
     },
+
 
     /**
      * Creates the basic dom element of the overlay and returns its value.
@@ -28,6 +30,7 @@ var blockrContainer = {
         "<p class='center' id='adblocker-caption'></p>" +
         "</div>")
     },
+
 
     /**
      * Append the appropriate title and captions from the options attributes.
@@ -51,6 +54,7 @@ var blockrContainer = {
         }
     },
 
+
     /**
      * Close the overlay panel when clicked on the cross button.
      *
@@ -68,6 +72,7 @@ var blockrContainer = {
         };
     },
 
+
     /**
      * Parameters that enables or disables the cross button.
      * If true, make it invisible.
@@ -82,6 +87,7 @@ var blockrContainer = {
         }
     },
 
+
     //Courtesy of http://stackoverflow.com/a/6121270
     fadeIn: function(element) {
         var op = 0.1;  // initial opacity
@@ -95,6 +101,7 @@ var blockrContainer = {
             op += op * 0.1;
         }, 10);
     },
+
 
     //Courtesy of http://stackoverflow.com/a/6121270
     fadeOut: function(element, callback) {
@@ -123,6 +130,7 @@ var blockrContainer = {
         }
         return frag;
     },
+
 
     /**
      * Register all functions for outside calling.
