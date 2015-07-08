@@ -39,17 +39,16 @@ var blockrContainer = {
     },
 
     closePanel : function() {
-        document.querySelector(".adblocker-overlay .close-cross").onclick = function() {
-            alert("hi");
-        };
+        var closeCross = document.querySelector(".adblocker-overlay .close-cross"),
+            overlay = document.getElementsByClassName("adblocker-overlay")[0];
 
-//        $(".close-cross").on("click", function() {
-//            if ($(this).data("target") === "adblocker-overlay") {
-//                $(".adblocker-overlay").fadeOut(300, function() {
-//                    $(this).remove();
-//                });
-//            }
-//        })
+        closeCross.onclick = function() {
+            if (this.dataset.target === "adblocker-overlay") {
+                var self = this;
+
+                blockrContainer.fadeOut(overlay);
+            }
+        };
     },
 
     aggressive : function(value) {
@@ -59,6 +58,7 @@ var blockrContainer = {
         }
     },
 
+    //Courtesy of http://stackoverflow.com/a/6121270
     fadeIn: function(element) {
         var op = 0.1;  // initial opacity
         element.style.display = 'block';
@@ -70,6 +70,22 @@ var blockrContainer = {
             element.style.filter = 'alpha(opacity=' + op * 100 + ")";
             op += op * 0.1;
         }, 10);
+    },
+
+    //Courtesy of http://stackoverflow.com/a/6121270
+    fadeOut: function(element, callback) {
+        var op = 1,
+            timer = setInterval(function () {
+            if (op <= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op -= op * 0.1;
+        }, 10);
+
+        callback();
     },
 
 
