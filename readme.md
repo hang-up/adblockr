@@ -3,12 +3,17 @@
 AdBlockr is a javascript plugin used to detect if a user has any kind of ad blocker installed.
 
 ### Version
-1.0.1
+1.1.0
 
 ### Dependencies
 
-As of the time being (June 4th 2015), AdBlockr relies on 
-* [JQuery] - next releases will be library free - all vanilla javascript!
+Starting on 1.1.0 (July 07 2015), there are *** two*** versions of AdBlockr.
+
+`adblockr_jquery.js` (and its minified version `adblockr_jquery.min.js`) relies on jQuery.
+
+`adblockr.js` (and `adblockr.min.js`) does **NOT** have any dependencies.
+
+
 
 
 ### Installation
@@ -20,8 +25,7 @@ As of the time being (June 4th 2015), AdBlockr relies on
 </head>
 
 <body>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/adblockr_min.js"></script>
+    <script src="/js/adblockr.min.js"></script>
 </body>
 
 <script>
@@ -30,7 +34,7 @@ As of the time being (June 4th 2015), AdBlockr relies on
 ```
 
 
-
+*Note that jQuery must be dropped in when using the jQuery version... Pretty obvious, but we never know* 
 ### Options
 
 AdBlockr is currently extended with the following options: 
@@ -51,9 +55,16 @@ blockrContainer.init({
 ```
 
 
-### Todo's
-
-* Get rid of jQuery
+### Contribution
+Please, by all mean fork this project to make it even more awesome! A couple of things to be aware of:
+* blockrContainer is the base object. Feel free to extend it.
+* The jQuery version is much preferred when implementing new features. 
+* Comment every new function at the beginning of its definition by following the current pattern. 
+* Don't be shy commenting unclear parts of your code.
+ 
+###TODO'S
+* Turn setInterval into setTimeout IIFE
+* Give the option to change the overlay into a banner (top, bottom)
 
 License
 ----
@@ -61,7 +72,7 @@ License
 MIT
 
 
-*From [Hang-Up] in Montreal.*
+**From [Hang-Up] in Montreal.**
 
 
 [jQuery]:http://jquery.com
