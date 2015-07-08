@@ -7,7 +7,7 @@ AdBlockr is a javascript plugin used to detect if a user has any kind of ad bloc
 
 ### Dependencies
 
-Starting on 1.1.0 (July 07 2015), there are *** two*** versions of AdBlockr: 
+Starting on 1.1.0 (July 07 2015), there are **TWO** versions of AdBlockr: 
 
 `adblockr_jquery.js` (and its minified version `/js/min/adblockr_jquery.js`) which rely on jQuery.
 
