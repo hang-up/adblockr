@@ -6,11 +6,20 @@ var blockrContainer = {
         aggressive: false
     },
 
+    /**
+     * Sets the background color based on the colors array passed in the options.
+     *
+     */
     setBackgroundColor : function() {
         var index = Math.floor(Math.random()*blockrContainer.options.colors.length);
         document.getElementsByClassName("adblocker-overlay")[0].style.backgroundColor = blockrContainer.options.colors[index];
     },
 
+    /**
+     * Creates the basic dom element of the overlay and returns its value.
+     *
+     * @returns {*}
+     */
     getText: function() {
         return blockrContainer.buildDomElement("<div class='adblocker-overlay'>" +
         "<span class='close-cross' data-target='adblocker-overlay'></span>" +
@@ -20,6 +29,10 @@ var blockrContainer = {
         "</div>")
     },
 
+    /**
+     * Append the appropriate title and captions from the options attributes.
+     *
+     */
     appendText : function() {
         if (!document.getElementById("ad-blockr")) {
             //Cache the body.
@@ -38,6 +51,10 @@ var blockrContainer = {
         }
     },
 
+    /**
+     * Close the overlay panel when clicked on the cross button.
+     *
+     */
     closePanel : function() {
         var closeCross = document.querySelector(".adblocker-overlay .close-cross"),
             overlay = document.getElementsByClassName("adblocker-overlay")[0];
@@ -51,6 +68,13 @@ var blockrContainer = {
         };
     },
 
+    /**
+     * Parameters that enables or disables the cross button.
+     * If true, make it invisible.
+     * If false, make it visible.
+     *
+     * @param value
+     */
     aggressive : function(value) {
         if(!value) {
             document.querySelector(".adblocker-overlay .close-cross").style.display = "block";
@@ -76,14 +100,14 @@ var blockrContainer = {
     fadeOut: function(element, callback) {
         var op = 1,
             timer = setInterval(function () {
-            if (op <= 0.1){
-                clearInterval(timer);
-                element.style.display = 'none';
-            }
-            element.style.opacity = op;
-            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-            op -= op * 0.1;
-        }, 10);
+                if (op <= 0.1){
+                    clearInterval(timer);
+                    element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+            }, 10);
 
         callback();
     },
@@ -100,6 +124,11 @@ var blockrContainer = {
         return frag;
     },
 
+    /**
+     * Register all functions for outside calling.
+     *
+     * @param options
+     */
     init: function(options) {
         if (options) {
             for(var key in options) {
